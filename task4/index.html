@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Task 4</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <main class="container px-3">
+      <div class="form-shell wide">
+        <h1 class="h3">Create your account</h1>
+        <p class="lead-text">Join the reading club</p>
+
+        <form id="register" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="firstName" class="form-label">First name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                required
+                minlength="2"
+                maxlength="30"
+              />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">First name is required.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="lastName" class="form-label">Last name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                required
+                minlength="2"
+                maxlength="30"
+              />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Last name is required.</div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="you@example.com"
+                required
+              />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback" id="emailError">
+                Email is required.
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                required
+                minlength="8"
+                aria-describedby="pwHelp"
+              />
+              <div id="pwHelp" class="form-text">
+                At least 8 characters, with a letter and a number.
+              </div>
+              <div class="valid-feedback">Strong enough.</div>
+              <div class="invalid-feedback" id="pwError">
+                Password is required.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="confirm" class="form-label">Confirm password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="confirm"
+                required
+              />
+              <div class="valid-feedback">Passwords match.</div>
+              <div class="invalid-feedback" id="confirmError">
+                Please repeat your password.
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <fieldset>
+                <legend>Gender</legend>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="female"
+                    value="female"
+                    required
+                  />
+                  <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="male"
+                    value="male"
+                  />
+                  <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="gender"
+                    id="other"
+                    value="other"
+                  />
+                  <label class="form-check-label" for="other"
+                    >Prefer not to say</label
+                  >
+                </div>
+                <div class="invalid-feedback d-block" id="genderError" hidden>
+                  Please pick one option.
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="col-md-6">
+              <fieldset>
+                <legend>
+                  Hobbies
+                  <span class="text-secondary fw-normal">(optional)</span>
+                </legend>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="hobbies"
+                    id="reading"
+                    value="reading"
+                  />
+                  <label class="form-check-label" for="reading">Reading</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="hobbies"
+                    id="hiking"
+                    value="hiking"
+                  />
+                  <label class="form-check-label" for="hiking">Hiking</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="hobbies"
+                    id="chess"
+                    value="chess"
+                  />
+                  <label class="form-check-label" for="chess">Chess</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="hobbies"
+                    id="music"
+                    value="music"
+                  />
+                  <label class="form-check-label" for="music">Music</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="col-12">
+              <label for="country" class="form-label">Country</label>
+              <select class="form-select" id="country" required>
+                <option value="" selected disabled>Choose a country</option>
+                <option>Kazakhstan</option>
+                <option>Kyrgyzstan</option>
+                <option>Uzbekistan</option>
+                <option>Turkey</option>
+                <option>Germany</option>
+                <option>Poland</option>
+                <option>Other</option>
+              </select>
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please choose your country.</div>
+            </div>
+
+            <div class="col-12 d-flex gap-2 pt-2">
+              <button type="submit" class="btn btn-clay px-4">Register</button>
+              <button
+                type="reset"
+                class="btn btn-outline-moss px-4"
+                id="resetBtn"
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <div
+          class="alert alert-success mt-4 mb-0 d-none"
+          id="done"
+          role="alert"
+        >
+          Welcome aboard! Your account has been created.
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
