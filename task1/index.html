@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Task 1</title>
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <main class="plain-card">
+      <h1>Contact us</h1>
+
+      <form action="#" method="post" id="contact">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          minlength="2"
+          maxlength="40"
+          pattern="[A-Za-zЀ-ӿ' -]+"
+          title="Letters, spaces, hyphens and apostrophes only"
+        />
+        <p class="hint">2 to 40 characters, letters only.</p>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required maxlength="80" />
+
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          minlength="10"
+          maxlength="300"
+        ></textarea>
+        <p class="hint">10 to 300 characters.</p>
+
+        <button type="submit">Send message</button>
+      </form>
+
+      <p class="status" id="status" hidden>All fields passed validation.</p>
+    </main>
+
+    <script>
+      const form = document.getElementById("contact");
+      const statusBox = document.getElementById("status");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        statusBox.hidden = false;
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
